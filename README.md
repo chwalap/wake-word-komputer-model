@@ -9,9 +9,6 @@ This repository contains a series of Jupyter Notebooks for training Neural Netwo
 - [Installation](#installation)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
 
 ## Getting Started
 

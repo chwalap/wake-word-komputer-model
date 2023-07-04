@@ -1,0 +1,11 @@
+tensorflow-macos==2.12.0
+tensorflow_model_optimization
+tensorflow-metal
+librosa
+matplotlib
+tqdm
+ipykernel
+jupyter
+pydot
+pydotplus
+graphviz

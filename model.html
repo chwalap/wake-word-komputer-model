@@ -1,0 +1,1479 @@
+
+<html>
+<head>
+<style>
+body {font-family: sans-serif; background-color: #fa0;}
+table {background-color: #eca;}
+th {background-color: black; color: white;}
+h1 {
+  background-color: ffaa00;
+  padding:5px;
+  color: black;
+}
+
+svg {
+  margin: 10px;
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  background: white;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #fec;
+  padding:5px;
+  margin:5px;
+}
+
+.tooltip {color: blue;}
+.tooltip .tooltipcontent  {
+    visibility: hidden;
+    color: black;
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltipcontent {
+    visibility: visible;
+}
+
+.edges line {
+  stroke: #333;
+}
+
+text {
+  font-weight: bold;
+}
+
+.nodes text {
+  color: black;
+  pointer-events: none;
+  font-family: sans-serif;
+  font-size: 11px;
+}
+</style>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+</head>
+<body>
+<h1>TensorFlow Lite Model</h2><table>
+<tr><th>filename</th><td>model.tflite</td></tr>
+<tr><th>version</th><td>3</td></tr>
+<tr><th>description</th><td>[77, 76, 73, 82, 32, 67, 111, 110, 118, 101, 114, 116, 101, 100, 46]</td></tr>
+</table>
+<div class='subgraph'><h2>Subgraph 0</h2>
+<h3>Inputs/Outputs</h3>
+<table><tr>
+<tr>
+<th>inputs</th><th>outputs</th></tr>
+<tr>
+<td><span class='tooltip'><span class='tooltipcontent'>0 serving_default_input_1:0 FLOAT32 [1, 99, 43, 1][-1, 99, 43, 1]<br></span>[0]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>86 StatefulPartitionedCall:0 FLOAT32 [1, 3][-1, 3]<br></span>[86]</span></td>
+</tr>
+</table>
+<h3>Tensors</h3>
+<table><tr>
+<tr>
+<th>index</th><th>name</th><th>type</th><th>shape</th><th>shape_signature</th><th>buffer</th><th>quantization</th></tr>
+<tr>
+<td>0</td><td>serving_default_input_1:0</td>
+<td>FLOAT32</td>
+<td>[1, 99, 43, 1]</td>
+<td>[-1, 99, 43, 1]</td>
+<td>1</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>1</td><td>model/reshape/strided_slice/stack</td>
+<td>INT32</td>
+<td>[1]</td>
+<td>None</td>
+<td>2</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>2</td><td>model/reshape/strided_slice/stack_1</td>
+<td>INT32</td>
+<td>[1]</td>
+<td>None</td>
+<td>3</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>3</td><td>model/reshape/Reshape/shape/1</td>
+<td>INT32</td>
+<td>[]</td>
+<td>None</td>
+<td>4</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>4</td><td>model/reshape/Reshape/shape/2</td>
+<td>INT32</td>
+<td>[]</td>
+<td>None</td>
+<td>5</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>5</td><td>model/conv1d/Conv1D/ExpandDims/dim</td>
+<td>INT32</td>
+<td>[]</td>
+<td>None</td>
+<td>6</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>6</td><td>model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze</td>
+<td>INT32</td>
+<td>[3]</td>
+<td>None</td>
+<td>7</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>7</td><td>model/concatenate/concat/axis</td>
+<td>INT32</td>
+<td>[]</td>
+<td>None</td>
+<td>3</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>8</td><td>model/separable_conv1d/separable_conv2d/BatchToSpaceND/block_shape</td>
+<td>INT32</td>
+<td>[2]</td>
+<td>None</td>
+<td>9</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>9</td><td>model/separable_conv1d/separable_conv2d/SpaceToBatchND/paddings</td>
+<td>INT32</td>
+<td>[2, 2]</td>
+<td>None</td>
+<td>10</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>10</td><td>model/separable_conv2d/separable_conv2d/BatchToSpaceND/block_shape</td>
+<td>INT32</td>
+<td>[2]</td>
+<td>None</td>
+<td>11</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>11</td><td>model/separable_conv2d/separable_conv2d/SpaceToBatchND/paddings</td>
+<td>INT32</td>
+<td>[2, 2]</td>
+<td>None</td>
+<td>12</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>12</td><td>model/separable_conv1d/separable_conv2d/BatchToSpaceND/crops</td>
+<td>INT32</td>
+<td>[2, 2]</td>
+<td>None</td>
+<td>13</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>13</td><td>model/separable_conv1d_1/separable_conv2d/BatchToSpaceND/block_shape</td>
+<td>INT32</td>
+<td>[2]</td>
+<td>None</td>
+<td>14</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>14</td><td>model/separable_conv1d_1/separable_conv2d/SpaceToBatchND/paddings</td>
+<td>INT32</td>
+<td>[2, 2]</td>
+<td>None</td>
+<td>15</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>15</td><td>model/average_pooling1d/ExpandDims/dim</td>
+<td>INT32</td>
+<td>[]</td>
+<td>None</td>
+<td>16</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>16</td><td>model/flatten/Const</td>
+<td>INT32</td>
+<td>[2]</td>
+<td>None</td>
+<td>17</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>17</td><td>model/separable_conv2d/separable_conv2d/BatchToSpaceND/crops</td>
+<td>INT32</td>
+<td>[2, 2]</td>
+<td>None</td>
+<td>18</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>18</td><td>model/separable_conv2d_1/separable_conv2d/BatchToSpaceND/block_shape</td>
+<td>INT32</td>
+<td>[2]</td>
+<td>None</td>
+<td>19</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>19</td><td>model/separable_conv2d_1/separable_conv2d/SpaceToBatchND/paddings</td>
+<td>INT32</td>
+<td>[2, 2]</td>
+<td>None</td>
+<td>20</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>20</td><td>model/flatten_1/Const</td>
+<td>INT32</td>
+<td>[2]</td>
+<td>None</td>
+<td>21</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>21</td><td>model/y_pred/BiasAdd/ReadVariableOp</td>
+<td>INT32</td>
+<td>[3]</td>
+<td>None</td>
+<td>22</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.007472634315490723], 'zero_point': [0]}</td>
+</tr>
+<tr>
+<td>22</td><td>model/y_pred/MatMul</td>
+<td>INT8</td>
+<td>[3, 32]</td>
+<td>None</td>
+<td>23</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.003075579646974802], 'zero_point': [0]}</td>
+</tr>
+<tr>
+<td>23</td><td>model/dense_1/BiasAdd/ReadVariableOp</td>
+<td>INT32</td>
+<td>[16]</td>
+<td>None</td>
+<td>24</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.004510996397584677], 'zero_point': [0]}</td>
+</tr>
+<tr>
+<td>24</td><td>model/dense_1/MatMul</td>
+<td>INT8</td>
+<td>[16, 200]</td>
+<td>None</td>
+<td>25</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.0058824908919632435], 'zero_point': [0]}</td>
+</tr>
+<tr>
+<td>25</td><td>model/separable_conv2d_1/BiasAdd/ReadVariableOp</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>26</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.00846572034060955, 0.007190119009464979, 0.008125769905745983, 0.006444749888032675, 0.008422705344855785, 0.008317536674439907, 0.008102551102638245, 0.006321652792394161], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>26</td><td>model/separable_conv2d_1/separable_conv2d1</td>
+<td>INT8</td>
+<td>[8, 1, 1, 8]</td>
+<td>None</td>
+<td>27</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.006929303985089064, 0.005885207559913397, 0.006651049945503473, 0.005275113042443991, 0.006894095800817013, 0.006808013655245304, 0.0066320449113845825, 0.005174356512725353], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>27</td><td>model/separable_conv2d_1/separable_conv2d/depthwise</td>
+<td>INT8</td>
+<td>[1, 3, 3, 8]</td>
+<td>None</td>
+<td>28</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 3, 'scale': [0.005380842834711075, 0.0030350429005920887, 0.003933554980903864, 0.004093813244253397, 0.0068135675974190235, 0.002835261868312955, 0.002607919042930007, 0.004872775170952082], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>28</td><td>model/separable_conv2d/BiasAdd/ReadVariableOp</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>29</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.0016259070252999663, 0.0013158851070329547, 0.0016024226788431406, 0.0014108443865552545, 0.0018241823418065906, 0.0013987248530611396, 0.001112874480895698, 0.001728918170556426], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>29</td><td>model/separable_conv2d/separable_conv2d</td>
+<td>INT8</td>
+<td>[8, 1, 1, 8]</td>
+<td>None</td>
+<td>30</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.006719706580042839, 0.005438417661935091, 0.006622648332268, 0.005830874666571617, 0.007539158221334219, 0.00578078581020236, 0.004599395673722029, 0.007145441137254238], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>30</td><td>model/separable_conv2d/separable_conv2d/depthwise</td>
+<td>INT8</td>
+<td>[1, 3, 3, 8]</td>
+<td>None</td>
+<td>31</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 3, 'scale': [0.0040105730295181274, 0.004119087941944599, 0.004025806672871113, 0.003883722936734557, 0.0031865928322076797, 0.003967965021729469, 0.003917152993381023, 0.004134791903197765], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>31</td><td>model/dense/BiasAdd/ReadVariableOp</td>
+<td>INT32</td>
+<td>[16]</td>
+<td>None</td>
+<td>32</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.003192962845787406], 'zero_point': [0]}</td>
+</tr>
+<tr>
+<td>32</td><td>model/dense/MatMul</td>
+<td>INT8</td>
+<td>[16, 160]</td>
+<td>None</td>
+<td>33</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.005742385517805815], 'zero_point': [0]}</td>
+</tr>
+<tr>
+<td>33</td><td>model/separable_conv1d_1/BiasAdd/ReadVariableOp</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>34</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.004349729977548122, 0.0050432113930583, 0.005525344051420689, 0.00626976415514946, 0.00486106937751174, 0.0040953923016786575, 0.00394519604742527, 0.004490838386118412], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>34</td><td>model/separable_conv1d_1/separable_conv2d</td>
+<td>INT8</td>
+<td>[8, 1, 1, 8]</td>
+<td>None</td>
+<td>35</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.005256799980998039, 0.006094896234571934, 0.006677570287138224, 0.007577227894216776, 0.005874771624803543, 0.00494942395016551, 0.004767906852066517, 0.0054273344576358795], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>35</td><td>model/separable_conv1d_1/separable_conv2d/depthwise</td>
+<td>INT8</td>
+<td>[1, 1, 3, 8]</td>
+<td>None</td>
+<td>36</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 3, 'scale': [0.0038100536912679672, 0.0049023875035345554, 0.00541026471182704, 0.00630559865385294, 0.0036233924329280853, 0.005143552087247372, 0.0050639500841498375, 0.0043715243227779865], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>36</td><td>model/separable_conv1d/BiasAdd/ReadVariableOp</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>37</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.0038513378240168095, 0.0036451586056500673, 0.003650184953585267, 0.004120305646210909, 0.0042655933648347855, 0.0028198356740176678, 0.0034885480999946594, 0.004625000059604645], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>37</td><td>model/separable_conv1d/separable_conv2d</td>
+<td>INT8</td>
+<td>[8, 1, 1, 8]</td>
+<td>None</td>
+<td>38</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.00598007719963789, 0.005659936927258968, 0.005667741410434246, 0.006397710647433996, 0.006623303052037954, 0.004378435667604208, 0.0054167634807527065, 0.007181363645941019], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>38</td><td>model/separable_conv2d_1/separable_conv2d</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>39</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.001786247594282031, 0.0014052686747163534, 0.001205600332468748, 0.001699815271422267, 0.0016208270099014044, 0.0015793702332302928, 0.0024457452818751335, 0.000988829298876226], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>39</td><td>model/separable_conv2d_1/separable_conv2d2</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>39</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.00252607767470181, 0.003250298323109746, 0.0035870224237442017, 0.004180631600320339, 0.0024023205041885376, 0.003410191275179386, 0.0033574148546904325, 0.0028983342926949263], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>40</td><td>model/separable_conv2d_1/separable_conv2d3</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>39</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.00020361231872811913, 0.00020912149921059608, 0.00020438572391867638, 0.00019717228133231401, 0.00016177976795006543, 0.00020144916197750717, 0.00019886948575731367, 0.00020991878409404308], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>41</td><td>model/separable_conv2d_1/separable_conv2d4</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>39</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.002114277333021164, 0.0011925497092306614, 0.0015455991961061954, 0.0016085689421743155, 0.002677233424037695, 0.001114050392061472, 0.0010247213067486882, 0.0019146440317854285], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>42</td><td>model/separable_conv1d/separable_conv2d/depthwise</td>
+<td>INT8</td>
+<td>[1, 1, 3, 8]</td>
+<td>None</td>
+<td>43</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 3, 'scale': [0.004508646205067635, 0.003547021886333823, 0.0030430415645241737, 0.004290483426302671, 0.0040911100804805756, 0.003986469469964504, 0.006173276342451572, 0.0024958921130746603], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>43</td><td>model/conv2d/BiasAdd/ReadVariableOp</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>44</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.00010978343925671652, 0.00014052998449187726, 0.00012089857773389667, 0.00014124580775387585, 0.00011911175533896312, 0.00012490143126342446, 0.00011339038610458374, 0.00015130374231375754], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>44</td><td>model/conv2d/Conv2D</td>
+<td>INT8</td>
+<td>[8, 3, 3, 1]</td>
+<td>None</td>
+<td>45</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.002839266089722514, 0.0036344463005661964, 0.0031267304439097643, 0.0036529593635350466, 0.003080518916249275, 0.0032302539329975843, 0.002932550385594368, 0.003913081716746092], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>45</td><td>model/conv1d/BiasAdd/ReadVariableOp</td>
+<td>INT32</td>
+<td>[8]</td>
+<td>None</td>
+<td>46</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [9.459859575144947e-05, 0.00015059539873618633, 0.00014219812874216586, 0.00014745591033715755, 0.00017360849597025663, 0.00012420752318575978, 0.00011846139386761934, 0.00014817168994341046], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>46</td><td>model/conv1d/Conv1D</td>
+<td>INT8</td>
+<td>[8, 1, 3, 43]</td>
+<td>None</td>
+<td>47</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.0024465492460876703, 0.0038947623688727617, 0.00367758865468204, 0.0038135675713419914, 0.004489936865866184, 0.0032123078126460314, 0.003063698997721076, 0.0038320794701576233], 'zero_point': [0, 0, 0, 0, 0, 0, 0, 0]}</td>
+</tr>
+<tr>
+<td>47</td><td>tfl.quantize</td>
+<td>INT8</td>
+<td>[1, 99, 43, 1]</td>
+<td>[-1, 99, 43, 1]</td>
+<td>48</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.03866613283753395], 'zero_point': [27]}</td>
+</tr>
+<tr>
+<td>48</td><td>model/reshape/Shape</td>
+<td>INT32</td>
+<td>[4]</td>
+<td>None</td>
+<td>49</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>49</td><td>model/reshape/strided_slice</td>
+<td>INT32</td>
+<td>[]</td>
+<td>None</td>
+<td>50</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>50</td><td>model/reshape/Reshape/shape</td>
+<td>INT32</td>
+<td>[3]</td>
+<td>None</td>
+<td>51</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+<tr>
+<td>51</td><td>model/reshape/Reshape</td>
+<td>INT8</td>
+<td>[1, 99, 43]</td>
+<td>[-1, 99, 43]</td>
+<td>52</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.03866613283753395], 'zero_point': [27]}</td>
+</tr>
+<tr>
+<td>52</td><td>model/conv1d/Conv1D/ExpandDims</td>
+<td>INT8</td>
+<td>[1, 1, 99, 43]</td>
+<td>[-1, 1, 99, 43]</td>
+<td>53</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.03866613283753395], 'zero_point': [27]}</td>
+</tr>
+<tr>
+<td>53</td><td>model/conv1d/Relu;model/conv1d/BiasAdd;model/conv1d/Conv1D/Squeeze;model/conv1d/BiasAdd/ReadVariableOp;model/separable_conv2d_1/separable_conv2d;model/conv1d/Conv1D</td>
+<td>INT8</td>
+<td>[1, 1, 99, 8]</td>
+<td>[-1, 1, 99, 8]</td>
+<td>54</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.39618268609046936], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>54</td><td>model/conv1d/Relu;model/conv1d/BiasAdd;model/conv1d/Conv1D/Squeeze;model/conv1d/BiasAdd/ReadVariableOp</td>
+<td>INT8</td>
+<td>[1, 99, 8]</td>
+<td>[-1, 99, 8]</td>
+<td>55</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.39618268609046936], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>55</td><td>model/separable_conv1d/ExpandDims</td>
+<td>INT8</td>
+<td>[1, 1, 99, 8]</td>
+<td>[-1, 1, 99, 8]</td>
+<td>56</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.39618268609046936], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>56</td><td>model/separable_conv1d/separable_conv2d/SpaceToBatchND</td>
+<td>INT8</td>
+<td>[1, 1, 52, 8]</td>
+<td>[-1, 1, 52, 8]</td>
+<td>57</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.39618268609046936], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>57</td><td>model/conv2d/Relu;model/conv2d/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/conv2d/Conv2D;model/conv2d/BiasAdd/ReadVariableOp</td>
+<td>INT8</td>
+<td>[1, 99, 43, 8]</td>
+<td>[-1, 99, 43, 8]</td>
+<td>58</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.050768885761499405], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>58</td><td>model/separable_conv2d/separable_conv2d/SpaceToBatchND</td>
+<td>INT8</td>
+<td>[1, 52, 45, 8]</td>
+<td>[-1, 52, 45, 8]</td>
+<td>59</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.050768885761499405], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>59</td><td>model/separable_conv1d/separable_conv2d/depthwise1</td>
+<td>INT8</td>
+<td>[1, 1, 50, 8]</td>
+<td>[-1, 1, 50, 8]</td>
+<td>60</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.6440281271934509], 'zero_point': [18]}</td>
+</tr>
+<tr>
+<td>60</td><td>model/separable_conv1d/separable_conv2d/BatchToSpaceND</td>
+<td>INT8</td>
+<td>[1, 1, 99, 8]</td>
+<td>[-1, 1, 99, 8]</td>
+<td>61</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.6440281271934509], 'zero_point': [18]}</td>
+</tr>
+<tr>
+<td>61</td><td>model/separable_conv1d/Relu;model/separable_conv1d/Squeeze;model/separable_conv1d/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv1d/separable_conv2d;model/separable_conv1d/BiasAdd/ReadVariableOp</td>
+<td>INT8</td>
+<td>[1, 1, 99, 8]</td>
+<td>[-1, 1, 99, 8]</td>
+<td>62</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.663003146648407], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>62</td><td>model/separable_conv1d/Relu;model/separable_conv1d/Squeeze</td>
+<td>INT8</td>
+<td>[1, 99, 8]</td>
+<td>[-1, 99, 8]</td>
+<td>63</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.663003146648407], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>63</td><td>model/separable_conv1d_1/ExpandDims</td>
+<td>INT8</td>
+<td>[1, 1, 99, 8]</td>
+<td>[-1, 1, 99, 8]</td>
+<td>64</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.663003146648407], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>64</td><td>model/separable_conv1d_1/separable_conv2d/SpaceToBatchND</td>
+<td>INT8</td>
+<td>[1, 1, 27, 8]</td>
+<td>[-1, 1, 27, 8]</td>
+<td>65</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.663003146648407], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>65</td><td>model/separable_conv1d_1/separable_conv2d/depthwise1</td>
+<td>INT8</td>
+<td>[1, 1, 25, 8]</td>
+<td>[-1, 1, 25, 8]</td>
+<td>66</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.8274482488632202], 'zero_point': [-66]}</td>
+</tr>
+<tr>
+<td>66</td><td>model/separable_conv1d_1/separable_conv2d/BatchToSpaceND</td>
+<td>INT8</td>
+<td>[1, 1, 99, 8]</td>
+<td>[-1, 1, 99, 8]</td>
+<td>67</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.8274482488632202], 'zero_point': [-66]}</td>
+</tr>
+<tr>
+<td>67</td><td>model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze;model/separable_conv1d_1/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv1d_1/separable_conv2d;model/separable_conv1d_1/BiasAdd/ReadVariableOp</td>
+<td>INT8</td>
+<td>[1, 1, 99, 8]</td>
+<td>[-1, 1, 99, 8]</td>
+<td>68</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.5560342073440552], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>68</td><td>model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze1</td>
+<td>INT8</td>
+<td>[1, 99, 8]</td>
+<td>[-1, 99, 8]</td>
+<td>69</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.5560342073440552], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>69</td><td>model/average_pooling1d/ExpandDims</td>
+<td>INT8</td>
+<td>[1, 99, 1, 8]</td>
+<td>[-1, 99, 1, 8]</td>
+<td>70</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.5560342073440552], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>70</td><td>model/average_pooling1d/AvgPool</td>
+<td>INT8</td>
+<td>[1, 20, 1, 8]</td>
+<td>[-1, 20, 1, 8]</td>
+<td>71</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.5560342073440552], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>71</td><td>model/flatten/Reshape</td>
+<td>INT8</td>
+<td>[1, 160]</td>
+<td>[-1, 160]</td>
+<td>72</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.5560342073440552], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>72</td><td>model/dense/MatMul;model/dense/Relu;model/dense/BiasAdd</td>
+<td>INT8</td>
+<td>[1, 16]</td>
+<td>[-1, 16]</td>
+<td>73</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [2.4296669960021973], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>73</td><td>model/separable_conv2d/separable_conv2d/depthwise1</td>
+<td>INT8</td>
+<td>[1, 50, 43, 8]</td>
+<td>[-1, 50, 43, 8]</td>
+<td>74</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.2419610172510147], 'zero_point': [-70]}</td>
+</tr>
+<tr>
+<td>74</td><td>model/separable_conv2d/separable_conv2d/BatchToSpaceND</td>
+<td>INT8</td>
+<td>[1, 99, 43, 8]</td>
+<td>[-1, 99, 43, 8]</td>
+<td>75</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.2419610172510147], 'zero_point': [-70]}</td>
+</tr>
+<tr>
+<td>75</td><td>model/separable_conv2d/Relu;model/separable_conv2d/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv2d/separable_conv2d;model/separable_conv2d/BiasAdd/ReadVariableOp</td>
+<td>INT8</td>
+<td>[1, 99, 43, 8]</td>
+<td>[-1, 99, 43, 8]</td>
+<td>76</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.39292681217193604], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>76</td><td>model/separable_conv2d_1/separable_conv2d/SpaceToBatchND</td>
+<td>INT8</td>
+<td>[1, 27, 45, 8]</td>
+<td>[-1, 27, 45, 8]</td>
+<td>77</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.39292681217193604], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>77</td><td>model/separable_conv2d_1/separable_conv2d/depthwise1</td>
+<td>INT8</td>
+<td>[1, 25, 43, 8]</td>
+<td>[-1, 25, 43, 8]</td>
+<td>78</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.2217273712158203], 'zero_point': [75]}</td>
+</tr>
+<tr>
+<td>78</td><td>model/separable_conv2d_1/separable_conv2d/BatchToSpaceND</td>
+<td>INT8</td>
+<td>[1, 99, 43, 8]</td>
+<td>[-1, 99, 43, 8]</td>
+<td>79</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [1.2217273712158203], 'zero_point': [75]}</td>
+</tr>
+<tr>
+<td>79</td><td>model/separable_conv2d_1/Relu;model/separable_conv2d_1/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv2d_1/BiasAdd/ReadVariableOp</td>
+<td>INT8</td>
+<td>[1, 99, 43, 8]</td>
+<td>[-1, 99, 43, 8]</td>
+<td>80</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.7668514251708984], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>80</td><td>model/average_pooling2d/AvgPool</td>
+<td>INT8</td>
+<td>[1, 5, 5, 8]</td>
+<td>[-1, 5, 5, 8]</td>
+<td>81</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.7668514251708984], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>81</td><td>model/flatten_1/Reshape</td>
+<td>INT8</td>
+<td>[1, 200]</td>
+<td>[-1, 200]</td>
+<td>82</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.7668514251708984], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>82</td><td>model/dense_1/MatMul;model/dense_1/Relu;model/dense_1/BiasAdd</td>
+<td>INT8</td>
+<td>[1, 16]</td>
+<td>[-1, 16]</td>
+<td>83</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [2.4296669960021973], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>83</td><td>model/concatenate/concat</td>
+<td>INT8</td>
+<td>[1, 32]</td>
+<td>[-1, 32]</td>
+<td>84</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [2.4296669960021973], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>84</td><td>model/y_pred/MatMul;model/y_pred/BiasAdd</td>
+<td>INT8</td>
+<td>[1, 3]</td>
+<td>[-1, 3]</td>
+<td>85</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.9875800013542175], 'zero_point': [-78]}</td>
+</tr>
+<tr>
+<td>85</td><td>StatefulPartitionedCall:01</td>
+<td>INT8</td>
+<td>[1, 3]</td>
+<td>[-1, 3]</td>
+<td>86</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': [0.00390625], 'zero_point': [-128]}</td>
+</tr>
+<tr>
+<td>86</td><td>StatefulPartitionedCall:0</td>
+<td>FLOAT32</td>
+<td>[1, 3]</td>
+<td>[-1, 3]</td>
+<td>87</td>
+<td>{'details': None, 'details_type': 0, 'max': None, 'min': None, 'quantized_dimension': 0, 'scale': None, 'zero_point': None}</td>
+</tr>
+</table>
+<h3>Ops</h3>
+<table><tr>
+<tr>
+<th>index</th><th>inputs</th><th>outputs</th><th>builtin_options</th><th>opcode_index</th></tr>
+<tr>
+<td>0</td><td><span class='tooltip'><span class='tooltipcontent'>0 serving_default_input_1:0 FLOAT32 [1, 99, 43, 1][-1, 99, 43, 1]<br></span>[0]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>47 tfl.quantize INT8 [1, 99, 43, 1][-1, 99, 43, 1]<br></span>[47]</span></td>
+<td>None</td>
+<td>QUANTIZE (0)</td>
+</tr>
+<tr>
+<td>1</td><td><span class='tooltip'><span class='tooltipcontent'>47 tfl.quantize INT8 [1, 99, 43, 1][-1, 99, 43, 1]<br></span>[47]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>48 model/reshape/Shape INT32 [4]None<br></span>[48]</span></td>
+<td>{'out_type': 2}</td>
+<td>SHAPE (1)</td>
+</tr>
+<tr>
+<td>2</td><td><span class='tooltip'><span class='tooltipcontent'>48 model/reshape/Shape INT32 [4]None<br>1 model/reshape/strided_slice/stack INT32 [1]None<br>2 model/reshape/strided_slice/stack_1 INT32 [1]None<br>2 model/reshape/strided_slice/stack_1 INT32 [1]None<br></span>[48, 1, 2, 2]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>49 model/reshape/strided_slice INT32 []None<br></span>[49]</span></td>
+<td>{'begin_mask': 0, 'ellipsis_mask': 0, 'end_mask': 0, 'new_axis_mask': 0, 'shrink_axis_mask': 1}</td>
+<td>STRIDED_SLICE (2)</td>
+</tr>
+<tr>
+<td>3</td><td><span class='tooltip'><span class='tooltipcontent'>49 model/reshape/strided_slice INT32 []None<br>3 model/reshape/Reshape/shape/1 INT32 []None<br>4 model/reshape/Reshape/shape/2 INT32 []None<br></span>[49, 3, 4]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>50 model/reshape/Reshape/shape INT32 [3]None<br></span>[50]</span></td>
+<td>{'axis': 0, 'values_count': 3}</td>
+<td>PACK (3)</td>
+</tr>
+<tr>
+<td>4</td><td><span class='tooltip'><span class='tooltipcontent'>47 tfl.quantize INT8 [1, 99, 43, 1][-1, 99, 43, 1]<br>50 model/reshape/Reshape/shape INT32 [3]None<br></span>[47, 50]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>51 model/reshape/Reshape INT8 [1, 99, 43][-1, 99, 43]<br></span>[51]</span></td>
+<td>None</td>
+<td>RESHAPE (4)</td>
+</tr>
+<tr>
+<td>5</td><td><span class='tooltip'><span class='tooltipcontent'>51 model/reshape/Reshape INT8 [1, 99, 43][-1, 99, 43]<br>5 model/conv1d/Conv1D/ExpandDims/dim INT32 []None<br></span>[51, 5]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>52 model/conv1d/Conv1D/ExpandDims INT8 [1, 1, 99, 43][-1, 1, 99, 43]<br></span>[52]</span></td>
+<td>{}</td>
+<td>EXPAND_DIMS (5)</td>
+</tr>
+<tr>
+<td>6</td><td><span class='tooltip'><span class='tooltipcontent'>52 model/conv1d/Conv1D/ExpandDims INT8 [1, 1, 99, 43][-1, 1, 99, 43]<br>46 model/conv1d/Conv1D INT8 [8, 1, 3, 43]None<br>45 model/conv1d/BiasAdd/ReadVariableOp INT32 [8]None<br></span>[52, 46, 45]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>53 model/conv1d/Relu;model/conv1d/BiasAdd;model/conv1d/Conv1D/Squeeze;model/conv1d/BiasAdd/ReadVariableOp;model/separable_conv2d_1/separable_conv2d;model/conv1d/Conv1D INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br></span>[53]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 0, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (6)</td>
+</tr>
+<tr>
+<td>7</td><td><span class='tooltip'><span class='tooltipcontent'>53 model/conv1d/Relu;model/conv1d/BiasAdd;model/conv1d/Conv1D/Squeeze;model/conv1d/BiasAdd/ReadVariableOp;model/separable_conv2d_1/separable_conv2d;model/conv1d/Conv1D INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br>6 model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze INT32 [3]None<br></span>[53, 6]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>54 model/conv1d/Relu;model/conv1d/BiasAdd;model/conv1d/Conv1D/Squeeze;model/conv1d/BiasAdd/ReadVariableOp INT8 [1, 99, 8][-1, 99, 8]<br></span>[54]</span></td>
+<td>None</td>
+<td>RESHAPE (4)</td>
+</tr>
+<tr>
+<td>8</td><td><span class='tooltip'><span class='tooltipcontent'>54 model/conv1d/Relu;model/conv1d/BiasAdd;model/conv1d/Conv1D/Squeeze;model/conv1d/BiasAdd/ReadVariableOp INT8 [1, 99, 8][-1, 99, 8]<br>7 model/concatenate/concat/axis INT32 []None<br></span>[54, 7]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>55 model/separable_conv1d/ExpandDims INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br></span>[55]</span></td>
+<td>{}</td>
+<td>EXPAND_DIMS (5)</td>
+</tr>
+<tr>
+<td>9</td><td><span class='tooltip'><span class='tooltipcontent'>55 model/separable_conv1d/ExpandDims INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br>8 model/separable_conv1d/separable_conv2d/BatchToSpaceND/block_shape INT32 [2]None<br>9 model/separable_conv1d/separable_conv2d/SpaceToBatchND/paddings INT32 [2, 2]None<br></span>[55, 8, 9]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>56 model/separable_conv1d/separable_conv2d/SpaceToBatchND INT8 [1, 1, 52, 8][-1, 1, 52, 8]<br></span>[56]</span></td>
+<td>None</td>
+<td>SPACE_TO_BATCH_ND (7)</td>
+</tr>
+<tr>
+<td>10</td><td><span class='tooltip'><span class='tooltipcontent'>47 tfl.quantize INT8 [1, 99, 43, 1][-1, 99, 43, 1]<br>44 model/conv2d/Conv2D INT8 [8, 3, 3, 1]None<br>43 model/conv2d/BiasAdd/ReadVariableOp INT32 [8]None<br></span>[47, 44, 43]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>57 model/conv2d/Relu;model/conv2d/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/conv2d/Conv2D;model/conv2d/BiasAdd/ReadVariableOp INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br></span>[57]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 0, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (6)</td>
+</tr>
+<tr>
+<td>11</td><td><span class='tooltip'><span class='tooltipcontent'>57 model/conv2d/Relu;model/conv2d/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/conv2d/Conv2D;model/conv2d/BiasAdd/ReadVariableOp INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br>10 model/separable_conv2d/separable_conv2d/BatchToSpaceND/block_shape INT32 [2]None<br>11 model/separable_conv2d/separable_conv2d/SpaceToBatchND/paddings INT32 [2, 2]None<br></span>[57, 10, 11]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>58 model/separable_conv2d/separable_conv2d/SpaceToBatchND INT8 [1, 52, 45, 8][-1, 52, 45, 8]<br></span>[58]</span></td>
+<td>None</td>
+<td>SPACE_TO_BATCH_ND (7)</td>
+</tr>
+<tr>
+<td>12</td><td><span class='tooltip'><span class='tooltipcontent'>56 model/separable_conv1d/separable_conv2d/SpaceToBatchND INT8 [1, 1, 52, 8][-1, 1, 52, 8]<br>42 model/separable_conv1d/separable_conv2d/depthwise INT8 [1, 1, 3, 8]None<br>38 model/separable_conv2d_1/separable_conv2d INT32 [8]None<br></span>[56, 42, 38]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>59 model/separable_conv1d/separable_conv2d/depthwise1 INT8 [1, 1, 50, 8][-1, 1, 50, 8]<br></span>[59]</span></td>
+<td>{'depth_multiplier': 1, 'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 0, 'padding': 1, 'stride_h': 1, 'stride_w': 1}</td>
+<td>DEPTHWISE_CONV_2D (8)</td>
+</tr>
+<tr>
+<td>13</td><td><span class='tooltip'><span class='tooltipcontent'>59 model/separable_conv1d/separable_conv2d/depthwise1 INT8 [1, 1, 50, 8][-1, 1, 50, 8]<br>8 model/separable_conv1d/separable_conv2d/BatchToSpaceND/block_shape INT32 [2]None<br>12 model/separable_conv1d/separable_conv2d/BatchToSpaceND/crops INT32 [2, 2]None<br></span>[59, 8, 12]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>60 model/separable_conv1d/separable_conv2d/BatchToSpaceND INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br></span>[60]</span></td>
+<td>None</td>
+<td>BATCH_TO_SPACE_ND (9)</td>
+</tr>
+<tr>
+<td>14</td><td><span class='tooltip'><span class='tooltipcontent'>60 model/separable_conv1d/separable_conv2d/BatchToSpaceND INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br>37 model/separable_conv1d/separable_conv2d INT8 [8, 1, 1, 8]None<br>36 model/separable_conv1d/BiasAdd/ReadVariableOp INT32 [8]None<br></span>[60, 37, 36]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>61 model/separable_conv1d/Relu;model/separable_conv1d/Squeeze;model/separable_conv1d/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv1d/separable_conv2d;model/separable_conv1d/BiasAdd/ReadVariableOp INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br></span>[61]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 1, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (6)</td>
+</tr>
+<tr>
+<td>15</td><td><span class='tooltip'><span class='tooltipcontent'>61 model/separable_conv1d/Relu;model/separable_conv1d/Squeeze;model/separable_conv1d/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv1d/separable_conv2d;model/separable_conv1d/BiasAdd/ReadVariableOp INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br>6 model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze INT32 [3]None<br></span>[61, 6]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>62 model/separable_conv1d/Relu;model/separable_conv1d/Squeeze INT8 [1, 99, 8][-1, 99, 8]<br></span>[62]</span></td>
+<td>None</td>
+<td>RESHAPE (4)</td>
+</tr>
+<tr>
+<td>16</td><td><span class='tooltip'><span class='tooltipcontent'>62 model/separable_conv1d/Relu;model/separable_conv1d/Squeeze INT8 [1, 99, 8][-1, 99, 8]<br>7 model/concatenate/concat/axis INT32 []None<br></span>[62, 7]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>63 model/separable_conv1d_1/ExpandDims INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br></span>[63]</span></td>
+<td>{}</td>
+<td>EXPAND_DIMS (5)</td>
+</tr>
+<tr>
+<td>17</td><td><span class='tooltip'><span class='tooltipcontent'>63 model/separable_conv1d_1/ExpandDims INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br>13 model/separable_conv1d_1/separable_conv2d/BatchToSpaceND/block_shape INT32 [2]None<br>14 model/separable_conv1d_1/separable_conv2d/SpaceToBatchND/paddings INT32 [2, 2]None<br></span>[63, 13, 14]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>64 model/separable_conv1d_1/separable_conv2d/SpaceToBatchND INT8 [1, 1, 27, 8][-1, 1, 27, 8]<br></span>[64]</span></td>
+<td>None</td>
+<td>SPACE_TO_BATCH_ND (7)</td>
+</tr>
+<tr>
+<td>18</td><td><span class='tooltip'><span class='tooltipcontent'>64 model/separable_conv1d_1/separable_conv2d/SpaceToBatchND INT8 [1, 1, 27, 8][-1, 1, 27, 8]<br>35 model/separable_conv1d_1/separable_conv2d/depthwise INT8 [1, 1, 3, 8]None<br>39 model/separable_conv2d_1/separable_conv2d2 INT32 [8]None<br></span>[64, 35, 39]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>65 model/separable_conv1d_1/separable_conv2d/depthwise1 INT8 [1, 1, 25, 8][-1, 1, 25, 8]<br></span>[65]</span></td>
+<td>{'depth_multiplier': 1, 'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 0, 'padding': 1, 'stride_h': 1, 'stride_w': 1}</td>
+<td>DEPTHWISE_CONV_2D (8)</td>
+</tr>
+<tr>
+<td>19</td><td><span class='tooltip'><span class='tooltipcontent'>65 model/separable_conv1d_1/separable_conv2d/depthwise1 INT8 [1, 1, 25, 8][-1, 1, 25, 8]<br>13 model/separable_conv1d_1/separable_conv2d/BatchToSpaceND/block_shape INT32 [2]None<br>12 model/separable_conv1d/separable_conv2d/BatchToSpaceND/crops INT32 [2, 2]None<br></span>[65, 13, 12]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>66 model/separable_conv1d_1/separable_conv2d/BatchToSpaceND INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br></span>[66]</span></td>
+<td>None</td>
+<td>BATCH_TO_SPACE_ND (9)</td>
+</tr>
+<tr>
+<td>20</td><td><span class='tooltip'><span class='tooltipcontent'>66 model/separable_conv1d_1/separable_conv2d/BatchToSpaceND INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br>34 model/separable_conv1d_1/separable_conv2d INT8 [8, 1, 1, 8]None<br>33 model/separable_conv1d_1/BiasAdd/ReadVariableOp INT32 [8]None<br></span>[66, 34, 33]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>67 model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze;model/separable_conv1d_1/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv1d_1/separable_conv2d;model/separable_conv1d_1/BiasAdd/ReadVariableOp INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br></span>[67]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 1, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (6)</td>
+</tr>
+<tr>
+<td>21</td><td><span class='tooltip'><span class='tooltipcontent'>67 model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze;model/separable_conv1d_1/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv1d_1/separable_conv2d;model/separable_conv1d_1/BiasAdd/ReadVariableOp INT8 [1, 1, 99, 8][-1, 1, 99, 8]<br>6 model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze INT32 [3]None<br></span>[67, 6]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>68 model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze1 INT8 [1, 99, 8][-1, 99, 8]<br></span>[68]</span></td>
+<td>None</td>
+<td>RESHAPE (4)</td>
+</tr>
+<tr>
+<td>22</td><td><span class='tooltip'><span class='tooltipcontent'>68 model/separable_conv1d_1/Relu;model/separable_conv1d_1/Squeeze1 INT8 [1, 99, 8][-1, 99, 8]<br>15 model/average_pooling1d/ExpandDims/dim INT32 []None<br></span>[68, 15]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>69 model/average_pooling1d/ExpandDims INT8 [1, 99, 1, 8][-1, 99, 1, 8]<br></span>[69]</span></td>
+<td>{}</td>
+<td>EXPAND_DIMS (5)</td>
+</tr>
+<tr>
+<td>23</td><td><span class='tooltip'><span class='tooltipcontent'>69 model/average_pooling1d/ExpandDims INT8 [1, 99, 1, 8][-1, 99, 1, 8]<br></span>[69]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>70 model/average_pooling1d/AvgPool INT8 [1, 20, 1, 8][-1, 20, 1, 8]<br></span>[70]</span></td>
+<td>{'filter_height': 5, 'filter_width': 1, 'fused_activation_function': 0, 'padding': 0, 'stride_h': 5, 'stride_w': 1}</td>
+<td>AVERAGE_POOL_2D (10)</td>
+</tr>
+<tr>
+<td>24</td><td><span class='tooltip'><span class='tooltipcontent'>70 model/average_pooling1d/AvgPool INT8 [1, 20, 1, 8][-1, 20, 1, 8]<br>16 model/flatten/Const INT32 [2]None<br></span>[70, 16]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>71 model/flatten/Reshape INT8 [1, 160][-1, 160]<br></span>[71]</span></td>
+<td>None</td>
+<td>RESHAPE (4)</td>
+</tr>
+<tr>
+<td>25</td><td><span class='tooltip'><span class='tooltipcontent'>71 model/flatten/Reshape INT8 [1, 160][-1, 160]<br>32 model/dense/MatMul INT8 [16, 160]None<br>31 model/dense/BiasAdd/ReadVariableOp INT32 [16]None<br></span>[71, 32, 31]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>72 model/dense/MatMul;model/dense/Relu;model/dense/BiasAdd INT8 [1, 16][-1, 16]<br></span>[72]</span></td>
+<td>{'asymmetric_quantize_inputs': False, 'fused_activation_function': 1, 'keep_num_dims': False, 'weights_format': 0}</td>
+<td>FULLY_CONNECTED (11)</td>
+</tr>
+<tr>
+<td>26</td><td><span class='tooltip'><span class='tooltipcontent'>58 model/separable_conv2d/separable_conv2d/SpaceToBatchND INT8 [1, 52, 45, 8][-1, 52, 45, 8]<br>30 model/separable_conv2d/separable_conv2d/depthwise INT8 [1, 3, 3, 8]None<br>40 model/separable_conv2d_1/separable_conv2d3 INT32 [8]None<br></span>[58, 30, 40]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>73 model/separable_conv2d/separable_conv2d/depthwise1 INT8 [1, 50, 43, 8][-1, 50, 43, 8]<br></span>[73]</span></td>
+<td>{'depth_multiplier': 1, 'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 0, 'padding': 1, 'stride_h': 1, 'stride_w': 1}</td>
+<td>DEPTHWISE_CONV_2D (8)</td>
+</tr>
+<tr>
+<td>27</td><td><span class='tooltip'><span class='tooltipcontent'>73 model/separable_conv2d/separable_conv2d/depthwise1 INT8 [1, 50, 43, 8][-1, 50, 43, 8]<br>10 model/separable_conv2d/separable_conv2d/BatchToSpaceND/block_shape INT32 [2]None<br>17 model/separable_conv2d/separable_conv2d/BatchToSpaceND/crops INT32 [2, 2]None<br></span>[73, 10, 17]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>74 model/separable_conv2d/separable_conv2d/BatchToSpaceND INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br></span>[74]</span></td>
+<td>None</td>
+<td>BATCH_TO_SPACE_ND (9)</td>
+</tr>
+<tr>
+<td>28</td><td><span class='tooltip'><span class='tooltipcontent'>74 model/separable_conv2d/separable_conv2d/BatchToSpaceND INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br>29 model/separable_conv2d/separable_conv2d INT8 [8, 1, 1, 8]None<br>28 model/separable_conv2d/BiasAdd/ReadVariableOp INT32 [8]None<br></span>[74, 29, 28]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>75 model/separable_conv2d/Relu;model/separable_conv2d/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv2d/separable_conv2d;model/separable_conv2d/BiasAdd/ReadVariableOp INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br></span>[75]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 1, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (6)</td>
+</tr>
+<tr>
+<td>29</td><td><span class='tooltip'><span class='tooltipcontent'>75 model/separable_conv2d/Relu;model/separable_conv2d/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv2d/separable_conv2d;model/separable_conv2d/BiasAdd/ReadVariableOp INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br>18 model/separable_conv2d_1/separable_conv2d/BatchToSpaceND/block_shape INT32 [2]None<br>19 model/separable_conv2d_1/separable_conv2d/SpaceToBatchND/paddings INT32 [2, 2]None<br></span>[75, 18, 19]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>76 model/separable_conv2d_1/separable_conv2d/SpaceToBatchND INT8 [1, 27, 45, 8][-1, 27, 45, 8]<br></span>[76]</span></td>
+<td>None</td>
+<td>SPACE_TO_BATCH_ND (7)</td>
+</tr>
+<tr>
+<td>30</td><td><span class='tooltip'><span class='tooltipcontent'>76 model/separable_conv2d_1/separable_conv2d/SpaceToBatchND INT8 [1, 27, 45, 8][-1, 27, 45, 8]<br>27 model/separable_conv2d_1/separable_conv2d/depthwise INT8 [1, 3, 3, 8]None<br>41 model/separable_conv2d_1/separable_conv2d4 INT32 [8]None<br></span>[76, 27, 41]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>77 model/separable_conv2d_1/separable_conv2d/depthwise1 INT8 [1, 25, 43, 8][-1, 25, 43, 8]<br></span>[77]</span></td>
+<td>{'depth_multiplier': 1, 'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 0, 'padding': 1, 'stride_h': 1, 'stride_w': 1}</td>
+<td>DEPTHWISE_CONV_2D (8)</td>
+</tr>
+<tr>
+<td>31</td><td><span class='tooltip'><span class='tooltipcontent'>77 model/separable_conv2d_1/separable_conv2d/depthwise1 INT8 [1, 25, 43, 8][-1, 25, 43, 8]<br>18 model/separable_conv2d_1/separable_conv2d/BatchToSpaceND/block_shape INT32 [2]None<br>17 model/separable_conv2d/separable_conv2d/BatchToSpaceND/crops INT32 [2, 2]None<br></span>[77, 18, 17]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>78 model/separable_conv2d_1/separable_conv2d/BatchToSpaceND INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br></span>[78]</span></td>
+<td>None</td>
+<td>BATCH_TO_SPACE_ND (9)</td>
+</tr>
+<tr>
+<td>32</td><td><span class='tooltip'><span class='tooltipcontent'>78 model/separable_conv2d_1/separable_conv2d/BatchToSpaceND INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br>26 model/separable_conv2d_1/separable_conv2d1 INT8 [8, 1, 1, 8]None<br>25 model/separable_conv2d_1/BiasAdd/ReadVariableOp INT32 [8]None<br></span>[78, 26, 25]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>79 model/separable_conv2d_1/Relu;model/separable_conv2d_1/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv2d_1/BiasAdd/ReadVariableOp INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br></span>[79]</span></td>
+<td>{'dilation_h_factor': 1, 'dilation_w_factor': 1, 'fused_activation_function': 1, 'padding': 1, 'stride_h': 1, 'stride_w': 1}</td>
+<td>CONV_2D (6)</td>
+</tr>
+<tr>
+<td>33</td><td><span class='tooltip'><span class='tooltipcontent'>79 model/separable_conv2d_1/Relu;model/separable_conv2d_1/BiasAdd;model/separable_conv2d_1/separable_conv2d;model/separable_conv2d_1/BiasAdd/ReadVariableOp INT8 [1, 99, 43, 8][-1, 99, 43, 8]<br></span>[79]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>80 model/average_pooling2d/AvgPool INT8 [1, 5, 5, 8][-1, 5, 5, 8]<br></span>[80]</span></td>
+<td>{'filter_height': 20, 'filter_width': 10, 'fused_activation_function': 0, 'padding': 0, 'stride_h': 20, 'stride_w': 10}</td>
+<td>AVERAGE_POOL_2D (10)</td>
+</tr>
+<tr>
+<td>34</td><td><span class='tooltip'><span class='tooltipcontent'>80 model/average_pooling2d/AvgPool INT8 [1, 5, 5, 8][-1, 5, 5, 8]<br>20 model/flatten_1/Const INT32 [2]None<br></span>[80, 20]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>81 model/flatten_1/Reshape INT8 [1, 200][-1, 200]<br></span>[81]</span></td>
+<td>None</td>
+<td>RESHAPE (4)</td>
+</tr>
+<tr>
+<td>35</td><td><span class='tooltip'><span class='tooltipcontent'>81 model/flatten_1/Reshape INT8 [1, 200][-1, 200]<br>24 model/dense_1/MatMul INT8 [16, 200]None<br>23 model/dense_1/BiasAdd/ReadVariableOp INT32 [16]None<br></span>[81, 24, 23]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>82 model/dense_1/MatMul;model/dense_1/Relu;model/dense_1/BiasAdd INT8 [1, 16][-1, 16]<br></span>[82]</span></td>
+<td>{'asymmetric_quantize_inputs': False, 'fused_activation_function': 1, 'keep_num_dims': False, 'weights_format': 0}</td>
+<td>FULLY_CONNECTED (11)</td>
+</tr>
+<tr>
+<td>36</td><td><span class='tooltip'><span class='tooltipcontent'>72 model/dense/MatMul;model/dense/Relu;model/dense/BiasAdd INT8 [1, 16][-1, 16]<br>82 model/dense_1/MatMul;model/dense_1/Relu;model/dense_1/BiasAdd INT8 [1, 16][-1, 16]<br></span>[72, 82]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>83 model/concatenate/concat INT8 [1, 32][-1, 32]<br></span>[83]</span></td>
+<td>{'axis': 1, 'fused_activation_function': 0}</td>
+<td>CONCATENATION (12)</td>
+</tr>
+<tr>
+<td>37</td><td><span class='tooltip'><span class='tooltipcontent'>83 model/concatenate/concat INT8 [1, 32][-1, 32]<br>22 model/y_pred/MatMul INT8 [3, 32]None<br>21 model/y_pred/BiasAdd/ReadVariableOp INT32 [3]None<br></span>[83, 22, 21]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>84 model/y_pred/MatMul;model/y_pred/BiasAdd INT8 [1, 3][-1, 3]<br></span>[84]</span></td>
+<td>{'asymmetric_quantize_inputs': False, 'fused_activation_function': 0, 'keep_num_dims': False, 'weights_format': 0}</td>
+<td>FULLY_CONNECTED (11)</td>
+</tr>
+<tr>
+<td>38</td><td><span class='tooltip'><span class='tooltipcontent'>84 model/y_pred/MatMul;model/y_pred/BiasAdd INT8 [1, 3][-1, 3]<br></span>[84]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>85 StatefulPartitionedCall:01 INT8 [1, 3][-1, 3]<br></span>[85]</span></td>
+<td>{'beta': 1.0}</td>
+<td>SOFTMAX (13)</td>
+</tr>
+<tr>
+<td>39</td><td><span class='tooltip'><span class='tooltipcontent'>85 StatefulPartitionedCall:01 INT8 [1, 3][-1, 3]<br></span>[85]</span></td>
+<td><span class='tooltip'><span class='tooltipcontent'>86 StatefulPartitionedCall:0 FLOAT32 [1, 3][-1, 3]<br></span>[86]</span></td>
+<td>None</td>
+<td>DEQUANTIZE (14)</td>
+</tr>
+</table>
+<svg id='subgraph0' width='1600' height='900'></svg>
+
+  <script>
+    function buildGraph() {
+      // Build graph data
+      var graph = {"nodes": [{"id": "o0", "name": "QUANTIZE (0)", "group": 2, "x": 200, "y": 200}, {"id": "o1", "name": "SHAPE (1)", "group": 2, "x": 200, "y": 400}, {"id": "o2", "name": "STRIDED_SLICE (2)", "group": 2, "x": 200, "y": 600}, {"id": "o3", "name": "PACK (3)", "group": 2, "x": 200, "y": 800}, {"id": "o4", "name": "RESHAPE (4)", "group": 2, "x": 200, "y": 1000}, {"id": "o5", "name": "EXPAND_DIMS (5)", "group": 2, "x": 200, "y": 1200}, {"id": "o6", "name": "CONV_2D (6)", "group": 2, "x": 200, "y": 1400}, {"id": "o7", "name": "RESHAPE (4)", "group": 2, "x": 200, "y": 1600}, {"id": "o8", "name": "EXPAND_DIMS (5)", "group": 2, "x": 200, "y": 1800}, {"id": "o9", "name": "SPACE_TO_BATCH_ND (7)", "group": 2, "x": 200, "y": 2000}, {"id": "o10", "name": "CONV_2D (6)", "group": 2, "x": 200, "y": 2200}, {"id": "o11", "name": "SPACE_TO_BATCH_ND (7)", "group": 2, "x": 200, "y": 2400}, {"id": "o12", "name": "DEPTHWISE_CONV_2D (8)", "group": 2, "x": 200, "y": 2600}, {"id": "o13", "name": "BATCH_TO_SPACE_ND (9)", "group": 2, "x": 200, "y": 2800}, {"id": "o14", "name": "CONV_2D (6)", "group": 2, "x": 200, "y": 3000}, {"id": "o15", "name": "RESHAPE (4)", "group": 2, "x": 200, "y": 3200}, {"id": "o16", "name": "EXPAND_DIMS (5)", "group": 2, "x": 200, "y": 3400}, {"id": "o17", "name": "SPACE_TO_BATCH_ND (7)", "group": 2, "x": 200, "y": 3600}, {"id": "o18", "name": "DEPTHWISE_CONV_2D (8)", "group": 2, "x": 200, "y": 3800}, {"id": "o19", "name": "BATCH_TO_SPACE_ND (9)", "group": 2, "x": 200, "y": 4000}, {"id": "o20", "name": "CONV_2D (6)", "group": 2, "x": 200, "y": 4200}, {"id": "o21", "name": "RESHAPE (4)", "group": 2, "x": 200, "y": 4400}, {"id": "o22", "name": "EXPAND_DIMS (5)", "group": 2, "x": 200, "y": 4600}, {"id": "o23", "name": "AVERAGE_POOL_2D (10)", "group": 2, "x": 200, "y": 4800}, {"id": "o24", "name": "RESHAPE (4)", "group": 2, "x": 200, "y": 5000}, {"id": "o25", "name": "FULLY_CONNECTED (11)", "group": 2, "x": 200, "y": 5200}, {"id": "o26", "name": "DEPTHWISE_CONV_2D (8)", "group": 2, "x": 200, "y": 5400}, {"id": "o27", "name": "BATCH_TO_SPACE_ND (9)", "group": 2, "x": 200, "y": 5600}, {"id": "o28", "name": "CONV_2D (6)", "group": 2, "x": 200, "y": 5800}, {"id": "o29", "name": "SPACE_TO_BATCH_ND (7)", "group": 2, "x": 200, "y": 6000}, {"id": "o30", "name": "DEPTHWISE_CONV_2D (8)", "group": 2, "x": 200, "y": 6200}, {"id": "o31", "name": "BATCH_TO_SPACE_ND (9)", "group": 2, "x": 200, "y": 6400}, {"id": "o32", "name": "CONV_2D (6)", "group": 2, "x": 200, "y": 6600}, {"id": "o33", "name": "AVERAGE_POOL_2D (10)", "group": 2, "x": 200, "y": 6800}, {"id": "o34", "name": "RESHAPE (4)", "group": 2, "x": 200, "y": 7000}, {"id": "o35", "name": "FULLY_CONNECTED (11)", "group": 2, "x": 200, "y": 7200}, {"id": "o36", "name": "CONCATENATION (12)", "group": 2, "x": 200, "y": 7400}, {"id": "o37", "name": "FULLY_CONNECTED (11)", "group": 2, "x": 200, "y": 7600}, {"id": "o38", "name": "SOFTMAX (13)", "group": 2, "x": 200, "y": 7800}, {"id": "o39", "name": "DEQUANTIZE (14)", "group": 2, "x": 200, "y": 8000}, {"id": "t0", "name": "[] (0)", "group": 1, "x": 170, "y": 100.0}, {"id": "t1", "name": "[] (1)", "group": 1, "x": 340, "y": 500.0}, {"id": "t2", "name": "[] (2)", "group": 1, "x": 510, "y": 500.0}, {"id": "t3", "name": "[] (3)", "group": 1, "x": 340, "y": 700.0}, {"id": "t4", "name": "[] (4)", "group": 1, "x": 510, "y": 700.0}, {"id": "t5", "name": "[] (5)", "group": 1, "x": 340, "y": 1100.0}, {"id": "t6", "name": "[] (6)", "group": 1, "x": 340, "y": 1500.0}, {"id": "t7", "name": "[] (7)", "group": 1, "x": 340, "y": 1700.0}, {"id": "t8", "name": "[] (8)", "group": 1, "x": 340, "y": 1900.0}, {"id": "t9", "name": "[] (9)", "group": 1, "x": 510, "y": 1900.0}, {"id": "t10", "name": "[] (10)", "group": 1, "x": 340, "y": 2300.0}, {"id": "t11", "name": "[] (11)", "group": 1, "x": 510, "y": 2300.0}, {"id": "t12", "name": "[] (12)", "group": 1, "x": 510, "y": 2700.0}, {"id": "t13", "name": "[] (13)", "group": 1, "x": 340, "y": 3500.0}, {"id": "t14", "name": "[] (14)", "group": 1, "x": 510, "y": 3500.0}, {"id": "t15", "name": "[] (15)", "group": 1, "x": 340, "y": 4500.0}, {"id": "t16", "name": "[] (16)", "group": 1, "x": 340, "y": 4900.0}, {"id": "t17", "name": "[] (17)", "group": 1, "x": 510, "y": 5500.0}, {"id": "t18", "name": "[] (18)", "group": 1, "x": 340, "y": 5900.0}, {"id": "t19", "name": "[] (19)", "group": 1, "x": 510, "y": 5900.0}, {"id": "t20", "name": "[] (20)", "group": 1, "x": 340, "y": 6900.0}, {"id": "t21", "name": "[] (21)", "group": 1, "x": 510, "y": 7500.0}, {"id": "t22", "name": "[] (22)", "group": 1, "x": 340, "y": 7500.0}, {"id": "t23", "name": "[] (23)", "group": 1, "x": 510, "y": 7100.0}, {"id": "t24", "name": "[] (24)", "group": 1, "x": 340, "y": 7100.0}, {"id": "t25", "name": "[] (25)", "group": 1, "x": 510, "y": 6500.0}, {"id": "t26", "name": "[] (26)", "group": 1, "x": 340, "y": 6500.0}, {"id": "t27", "name": "[] (27)", "group": 1, "x": 340, "y": 6100.0}, {"id": "t28", "name": "[] (28)", "group": 1, "x": 510, "y": 5700.0}, {"id": "t29", "name": "[] (29)", "group": 1, "x": 340, "y": 5700.0}, {"id": "t30", "name": "[] (30)", "group": 1, "x": 340, "y": 5300.0}, {"id": "t31", "name": "[] (31)", "group": 1, "x": 510, "y": 5100.0}, {"id": "t32", "name": "[] (32)", "group": 1, "x": 340, "y": 5100.0}, {"id": "t33", "name": "[] (33)", "group": 1, "x": 510, "y": 4100.0}, {"id": "t34", "name": "[] (34)", "group": 1, "x": 340, "y": 4100.0}, {"id": "t35", "name": "[] (35)", "group": 1, "x": 340, "y": 3700.0}, {"id": "t36", "name": "[] (36)", "group": 1, "x": 510, "y": 2900.0}, {"id": "t37", "name": "[] (37)", "group": 1, "x": 340, "y": 2900.0}, {"id": "t38", "name": "[] (38)", "group": 1, "x": 510, "y": 2500.0}, {"id": "t39", "name": "[] (39)", "group": 1, "x": 510, "y": 3700.0}, {"id": "t40", "name": "[] (40)", "group": 1, "x": 510, "y": 5300.0}, {"id": "t41", "name": "[] (41)", "group": 1, "x": 510, "y": 6100.0}, {"id": "t42", "name": "[] (42)", "group": 1, "x": 340, "y": 2500.0}, {"id": "t43", "name": "[] (43)", "group": 1, "x": 510, "y": 2100.0}, {"id": "t44", "name": "[] (44)", "group": 1, "x": 340, "y": 2100.0}, {"id": "t45", "name": "[] (45)", "group": 1, "x": 510, "y": 1300.0}, {"id": "t46", "name": "[] (46)", "group": 1, "x": 340, "y": 1300.0}, {"id": "t47", "name": "[] (47)", "group": 1, "x": 170, "y": 300.0}, {"id": "t48", "name": "[] (48)", "group": 1, "x": 170, "y": 500.0}, {"id": "t49", "name": "[] (49)", "group": 1, "x": 170, "y": 700.0}, {"id": "t50", "name": "[] (50)", "group": 1, "x": 340, "y": 900.0}, {"id": "t51", "name": "[] (51)", "group": 1, "x": 170, "y": 1100.0}, {"id": "t52", "name": "[] (52)", "group": 1, "x": 170, "y": 1300.0}, {"id": "t53", "name": "[] (53)", "group": 1, "x": 170, "y": 1500.0}, {"id": "t54", "name": "[] (54)", "group": 1, "x": 170, "y": 1700.0}, {"id": "t55", "name": "[] (55)", "group": 1, "x": 170, "y": 1900.0}, {"id": "t56", "name": "[] (56)", "group": 1, "x": 170, "y": 2500.0}, {"id": "t57", "name": "[] (57)", "group": 1, "x": 170, "y": 2300.0}, {"id": "t58", "name": "[] (58)", "group": 1, "x": 170, "y": 5300.0}, {"id": "t59", "name": "[] (59)", "group": 1, "x": 170, "y": 2700.0}, {"id": "t60", "name": "[] (60)", "group": 1, "x": 170, "y": 2900.0}, {"id": "t61", "name": "[] (61)", "group": 1, "x": 170, "y": 3100.0}, {"id": "t62", "name": "[] (62)", "group": 1, "x": 170, "y": 3300.0}, {"id": "t63", "name": "[] (63)", "group": 1, "x": 170, "y": 3500.0}, {"id": "t64", "name": "[] (64)", "group": 1, "x": 170, "y": 3700.0}, {"id": "t65", "name": "[] (65)", "group": 1, "x": 170, "y": 3900.0}, {"id": "t66", "name": "[] (66)", "group": 1, "x": 170, "y": 4100.0}, {"id": "t67", "name": "[] (67)", "group": 1, "x": 170, "y": 4300.0}, {"id": "t68", "name": "[] (68)", "group": 1, "x": 170, "y": 4500.0}, {"id": "t69", "name": "[] (69)", "group": 1, "x": 170, "y": 4700.0}, {"id": "t70", "name": "[] (70)", "group": 1, "x": 170, "y": 4900.0}, {"id": "t71", "name": "[] (71)", "group": 1, "x": 170, "y": 5100.0}, {"id": "t72", "name": "[] (72)", "group": 1, "x": 170, "y": 7300.0}, {"id": "t73", "name": "[] (73)", "group": 1, "x": 170, "y": 5500.0}, {"id": "t74", "name": "[] (74)", "group": 1, "x": 170, "y": 5700.0}, {"id": "t75", "name": "[] (75)", "group": 1, "x": 170, "y": 5900.0}, {"id": "t76", "name": "[] (76)", "group": 1, "x": 170, "y": 6100.0}, {"id": "t77", "name": "[] (77)", "group": 1, "x": 170, "y": 6300.0}, {"id": "t78", "name": "[] (78)", "group": 1, "x": 170, "y": 6500.0}, {"id": "t79", "name": "[] (79)", "group": 1, "x": 170, "y": 6700.0}, {"id": "t80", "name": "[] (80)", "group": 1, "x": 170, "y": 6900.0}, {"id": "t81", "name": "[] (81)", "group": 1, "x": 170, "y": 7100.0}, {"id": "t82", "name": "[] (82)", "group": 1, "x": 340, "y": 7300.0}, {"id": "t83", "name": "[] (83)", "group": 1, "x": 170, "y": 7500.0}, {"id": "t84", "name": "[] (84)", "group": 1, "x": 170, "y": 7700.0}, {"id": "t85", "name": "[] (85)", "group": 1, "x": 170, "y": 7900.0}, {"id": "t86", "name": "[] (86)", "group": 1, "x": 170, "y": 8100.0}], "edges": [{"source": "t0", "target": "o0"}, {"target": "t47", "source": "o0"}, {"source": "t47", "target": "o1"}, {"target": "t48", "source": "o1"}, {"source": "t48", "target": "o2"}, {"source": "t1", "target": "o2"}, {"source": "t2", "target": "o2"}, {"source": "t2", "target": "o2"}, {"target": "t49", "source": "o2"}, {"source": "t49", "target": "o3"}, {"source": "t3", "target": "o3"}, {"source": "t4", "target": "o3"}, {"target": "t50", "source": "o3"}, {"source": "t47", "target": "o4"}, {"source": "t50", "target": "o4"}, {"target": "t51", "source": "o4"}, {"source": "t51", "target": "o5"}, {"source": "t5", "target": "o5"}, {"target": "t52", "source": "o5"}, {"source": "t52", "target": "o6"}, {"source": "t46", "target": "o6"}, {"source": "t45", "target": "o6"}, {"target": "t53", "source": "o6"}, {"source": "t53", "target": "o7"}, {"source": "t6", "target": "o7"}, {"target": "t54", "source": "o7"}, {"source": "t54", "target": "o8"}, {"source": "t7", "target": "o8"}, {"target": "t55", "source": "o8"}, {"source": "t55", "target": "o9"}, {"source": "t8", "target": "o9"}, {"source": "t9", "target": "o9"}, {"target": "t56", "source": "o9"}, {"source": "t47", "target": "o10"}, {"source": "t44", "target": "o10"}, {"source": "t43", "target": "o10"}, {"target": "t57", "source": "o10"}, {"source": "t57", "target": "o11"}, {"source": "t10", "target": "o11"}, {"source": "t11", "target": "o11"}, {"target": "t58", "source": "o11"}, {"source": "t56", "target": "o12"}, {"source": "t42", "target": "o12"}, {"source": "t38", "target": "o12"}, {"target": "t59", "source": "o12"}, {"source": "t59", "target": "o13"}, {"source": "t8", "target": "o13"}, {"source": "t12", "target": "o13"}, {"target": "t60", "source": "o13"}, {"source": "t60", "target": "o14"}, {"source": "t37", "target": "o14"}, {"source": "t36", "target": "o14"}, {"target": "t61", "source": "o14"}, {"source": "t61", "target": "o15"}, {"source": "t6", "target": "o15"}, {"target": "t62", "source": "o15"}, {"source": "t62", "target": "o16"}, {"source": "t7", "target": "o16"}, {"target": "t63", "source": "o16"}, {"source": "t63", "target": "o17"}, {"source": "t13", "target": "o17"}, {"source": "t14", "target": "o17"}, {"target": "t64", "source": "o17"}, {"source": "t64", "target": "o18"}, {"source": "t35", "target": "o18"}, {"source": "t39", "target": "o18"}, {"target": "t65", "source": "o18"}, {"source": "t65", "target": "o19"}, {"source": "t13", "target": "o19"}, {"source": "t12", "target": "o19"}, {"target": "t66", "source": "o19"}, {"source": "t66", "target": "o20"}, {"source": "t34", "target": "o20"}, {"source": "t33", "target": "o20"}, {"target": "t67", "source": "o20"}, {"source": "t67", "target": "o21"}, {"source": "t6", "target": "o21"}, {"target": "t68", "source": "o21"}, {"source": "t68", "target": "o22"}, {"source": "t15", "target": "o22"}, {"target": "t69", "source": "o22"}, {"source": "t69", "target": "o23"}, {"target": "t70", "source": "o23"}, {"source": "t70", "target": "o24"}, {"source": "t16", "target": "o24"}, {"target": "t71", "source": "o24"}, {"source": "t71", "target": "o25"}, {"source": "t32", "target": "o25"}, {"source": "t31", "target": "o25"}, {"target": "t72", "source": "o25"}, {"source": "t58", "target": "o26"}, {"source": "t30", "target": "o26"}, {"source": "t40", "target": "o26"}, {"target": "t73", "source": "o26"}, {"source": "t73", "target": "o27"}, {"source": "t10", "target": "o27"}, {"source": "t17", "target": "o27"}, {"target": "t74", "source": "o27"}, {"source": "t74", "target": "o28"}, {"source": "t29", "target": "o28"}, {"source": "t28", "target": "o28"}, {"target": "t75", "source": "o28"}, {"source": "t75", "target": "o29"}, {"source": "t18", "target": "o29"}, {"source": "t19", "target": "o29"}, {"target": "t76", "source": "o29"}, {"source": "t76", "target": "o30"}, {"source": "t27", "target": "o30"}, {"source": "t41", "target": "o30"}, {"target": "t77", "source": "o30"}, {"source": "t77", "target": "o31"}, {"source": "t18", "target": "o31"}, {"source": "t17", "target": "o31"}, {"target": "t78", "source": "o31"}, {"source": "t78", "target": "o32"}, {"source": "t26", "target": "o32"}, {"source": "t25", "target": "o32"}, {"target": "t79", "source": "o32"}, {"source": "t79", "target": "o33"}, {"target": "t80", "source": "o33"}, {"source": "t80", "target": "o34"}, {"source": "t20", "target": "o34"}, {"target": "t81", "source": "o34"}, {"source": "t81", "target": "o35"}, {"source": "t24", "target": "o35"}, {"source": "t23", "target": "o35"}, {"target": "t82", "source": "o35"}, {"source": "t72", "target": "o36"}, {"source": "t82", "target": "o36"}, {"target": "t83", "source": "o36"}, {"source": "t83", "target": "o37"}, {"source": "t22", "target": "o37"}, {"source": "t21", "target": "o37"}, {"target": "t84", "source": "o37"}, {"source": "t84", "target": "o38"}, {"target": "t85", "source": "o38"}, {"source": "t85", "target": "o39"}, {"target": "t86", "source": "o39"}]};
+
+      var svg = d3.select("#subgraph0")
+      var width = svg.attr("width");
+      var height = svg.attr("height");
+      // Make the graph scrollable.
+      svg = svg.call(d3.zoom().on("zoom", function() {
+        svg.attr("transform", d3.event.transform);
+      })).append("g");
+
+
+      var color = d3.scaleOrdinal(d3.schemeDark2);
+
+      var simulation = d3.forceSimulation()
+          .force("link", d3.forceLink().id(function(d) {return d.id;}))
+          .force("charge", d3.forceManyBody())
+          .force("center", d3.forceCenter(0.5 * width, 0.5 * height));
+
+      var edge = svg.append("g").attr("class", "edges").selectAll("line")
+        .data(graph.edges).enter().append("path").attr("stroke","black").attr("fill","none")
+
+      // Make the node group
+      var node = svg.selectAll(".nodes")
+        .data(graph.nodes)
+        .enter().append("g")
+        .attr("x", function(d){return d.x})
+        .attr("y", function(d){return d.y})
+        .attr("transform", function(d) {
+          return "translate( " + d.x + ", " + d.y + ")"
+        })
+        .attr("class", "nodes")
+          .call(d3.drag()
+              .on("start", function(d) {
+                if(!d3.event.active) simulation.alphaTarget(1.0).restart();
+                d.fx = d.x;d.fy = d.y;
+              })
+              .on("drag", function(d) {
+                d.fx = d3.event.x; d.fy = d3.event.y;
+              })
+              .on("end", function(d) {
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = d.fy = null;
+              }));
+      // Within the group, draw a box for the node position and text
+      // on the side.
+
+      var node_width = 150;
+      var node_height = 30;
+
+      node.append("rect")
+          .attr("r", "5px")
+          .attr("width", node_width)
+          .attr("height", node_height)
+          .attr("rx", function(d) { return d.group == 1 ? 1 : 10; })
+          .attr("stroke", "#000000")
+          .attr("fill", function(d) { return d.group == 1 ? "#dddddd" : "#000000"; })
+      node.append("text")
+          .text(function(d) { return d.name; })
+          .attr("x", 5)
+          .attr("y", 20)
+          .attr("fill", function(d) { return d.group == 1 ? "#000000" : "#eeeeee"; })
+      // Setup force parameters and update position callback
+
+
+      var node = svg.selectAll(".nodes")
+        .data(graph.nodes);
+
+      // Bind the links
+      var name_to_g = {}
+      node.each(function(data, index, nodes) {
+        console.log(data.id)
+        name_to_g[data.id] = this;
+      });
+
+      function proc(w, t) {
+        return parseInt(w.getAttribute(t));
+      }
+      edge.attr("d", function(d) {
+        function lerp(t, a, b) {
+          return (1.0-t) * a + t * b;
+        }
+        var x1 = proc(name_to_g[d.source],"x") + node_width /2;
+        var y1 = proc(name_to_g[d.source],"y") + node_height;
+        var x2 = proc(name_to_g[d.target],"x") + node_width /2;
+        var y2 = proc(name_to_g[d.target],"y");
+        var s = "M " + x1 + " " + y1
+            + " C " + x1 + " " + lerp(.5, y1, y2)
+            + " " + x2 + " " + lerp(.5, y1, y2)
+            + " " + x2  + " " + y2
+      return s;
+    });
+
+  }
+  buildGraph()
+</script>
+</div><h2>Buffers</h2>
+<table><tr>
+<tr>
+<th>index</th><th>data</th></tr>
+<tr>
+<td>0</td><td>--</td>
+</tr>
+<tr>
+<td>1</td><td>--</td>
+</tr>
+<tr>
+<td>2</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>3</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>4</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>5</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>6</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>7</td><td>12 bytes</td>
+</tr>
+<tr>
+<td>8</td><td>--</td>
+</tr>
+<tr>
+<td>9</td><td>8 bytes</td>
+</tr>
+<tr>
+<td>10</td><td>16 bytes</td>
+</tr>
+<tr>
+<td>11</td><td>8 bytes</td>
+</tr>
+<tr>
+<td>12</td><td>16 bytes</td>
+</tr>
+<tr>
+<td>13</td><td>16 bytes</td>
+</tr>
+<tr>
+<td>14</td><td>8 bytes</td>
+</tr>
+<tr>
+<td>15</td><td>16 bytes</td>
+</tr>
+<tr>
+<td>16</td><td>4 bytes</td>
+</tr>
+<tr>
+<td>17</td><td>8 bytes</td>
+</tr>
+<tr>
+<td>18</td><td>16 bytes</td>
+</tr>
+<tr>
+<td>19</td><td>8 bytes</td>
+</tr>
+<tr>
+<td>20</td><td>16 bytes</td>
+</tr>
+<tr>
+<td>21</td><td>8 bytes</td>
+</tr>
+<tr>
+<td>22</td><td>12 bytes</td>
+</tr>
+<tr>
+<td>23</td><td>96 bytes</td>
+</tr>
+<tr>
+<td>24</td><td>64 bytes</td>
+</tr>
+<tr>
+<td>25</td><td>3200 bytes</td>
+</tr>
+<tr>
+<td>26</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>27</td><td>64 bytes</td>
+</tr>
+<tr>
+<td>28</td><td>72 bytes</td>
+</tr>
+<tr>
+<td>29</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>30</td><td>64 bytes</td>
+</tr>
+<tr>
+<td>31</td><td>72 bytes</td>
+</tr>
+<tr>
+<td>32</td><td>64 bytes</td>
+</tr>
+<tr>
+<td>33</td><td>2560 bytes</td>
+</tr>
+<tr>
+<td>34</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>35</td><td>64 bytes</td>
+</tr>
+<tr>
+<td>36</td><td>24 bytes</td>
+</tr>
+<tr>
+<td>37</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>38</td><td>64 bytes</td>
+</tr>
+<tr>
+<td>39</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>40</td><td>--</td>
+</tr>
+<tr>
+<td>41</td><td>--</td>
+</tr>
+<tr>
+<td>42</td><td>--</td>
+</tr>
+<tr>
+<td>43</td><td>24 bytes</td>
+</tr>
+<tr>
+<td>44</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>45</td><td>72 bytes</td>
+</tr>
+<tr>
+<td>46</td><td>32 bytes</td>
+</tr>
+<tr>
+<td>47</td><td>1032 bytes</td>
+</tr>
+<tr>
+<td>48</td><td>--</td>
+</tr>
+<tr>
+<td>49</td><td>--</td>
+</tr>
+<tr>
+<td>50</td><td>--</td>
+</tr>
+<tr>
+<td>51</td><td>--</td>
+</tr>
+<tr>
+<td>52</td><td>--</td>
+</tr>
+<tr>
+<td>53</td><td>--</td>
+</tr>
+<tr>
+<td>54</td><td>--</td>
+</tr>
+<tr>
+<td>55</td><td>--</td>
+</tr>
+<tr>
+<td>56</td><td>--</td>
+</tr>
+<tr>
+<td>57</td><td>--</td>
+</tr>
+<tr>
+<td>58</td><td>--</td>
+</tr>
+<tr>
+<td>59</td><td>--</td>
+</tr>
+<tr>
+<td>60</td><td>--</td>
+</tr>
+<tr>
+<td>61</td><td>--</td>
+</tr>
+<tr>
+<td>62</td><td>--</td>
+</tr>
+<tr>
+<td>63</td><td>--</td>
+</tr>
+<tr>
+<td>64</td><td>--</td>
+</tr>
+<tr>
+<td>65</td><td>--</td>
+</tr>
+<tr>
+<td>66</td><td>--</td>
+</tr>
+<tr>
+<td>67</td><td>--</td>
+</tr>
+<tr>
+<td>68</td><td>--</td>
+</tr>
+<tr>
+<td>69</td><td>--</td>
+</tr>
+<tr>
+<td>70</td><td>--</td>
+</tr>
+<tr>
+<td>71</td><td>--</td>
+</tr>
+<tr>
+<td>72</td><td>--</td>
+</tr>
+<tr>
+<td>73</td><td>--</td>
+</tr>
+<tr>
+<td>74</td><td>--</td>
+</tr>
+<tr>
+<td>75</td><td>--</td>
+</tr>
+<tr>
+<td>76</td><td>--</td>
+</tr>
+<tr>
+<td>77</td><td>--</td>
+</tr>
+<tr>
+<td>78</td><td>--</td>
+</tr>
+<tr>
+<td>79</td><td>--</td>
+</tr>
+<tr>
+<td>80</td><td>--</td>
+</tr>
+<tr>
+<td>81</td><td>--</td>
+</tr>
+<tr>
+<td>82</td><td>--</td>
+</tr>
+<tr>
+<td>83</td><td>--</td>
+</tr>
+<tr>
+<td>84</td><td>--</td>
+</tr>
+<tr>
+<td>85</td><td>--</td>
+</tr>
+<tr>
+<td>86</td><td>--</td>
+</tr>
+<tr>
+<td>87</td><td>--</td>
+</tr>
+<tr>
+<td>88</td><td>16 bytes</td>
+</tr>
+<tr>
+<td>89</td><td>88 bytes</td>
+</tr>
+</table>
+<h2>Operator Codes</h2>
+<table><tr>
+<tr>
+<th>index</th><th>builtin_code</th><th>custom_code</th><th>version</th></tr>
+<tr>
+<td>0</td><td>QUANTIZE</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td><td>SHAPE</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td><td>STRIDED_SLICE</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td><td>PACK</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td><td>RESHAPE</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td><td>EXPAND_DIMS</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td><td>CONV_2D</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td>7</td><td>SPACE_TO_BATCH_ND</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>8</td><td>DEPTHWISE_CONV_2D</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td>9</td><td>BATCH_TO_SPACE_ND</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>10</td><td>AVERAGE_POOL_2D</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>11</td><td>FULLY_CONNECTED</td>
+<td></td>
+<td>4</td>
+</tr>
+<tr>
+<td>12</td><td>CONCATENATION</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>13</td><td>SOFTMAX</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>14</td><td>DEQUANTIZE</td>
+<td></td>
+<td>2</td>
+</tr>
+</table>
+</body></html>

@@ -28,7 +28,7 @@ The project utilizes deep learning techniques for detecting the wake word in aud
 1. Clone this repository.
 
     ```sh
-    git clone [https://github.com/yourusername/wake-word-detection.git](https://github.com/chwalap/wake-word-komputer-model.git)
+    git clone https://github.com/chwalap/wake-word-komputer-model.git
     ```
 
 2. Navigate to the cloned directory.

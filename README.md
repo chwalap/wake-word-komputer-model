@@ -1,4 +1,4 @@
-# Wake Word  "komputer" model
+# Wake word  "komputer" model
 
 This repository contains a series of Jupyter Notebooks for training Neural Networks (NN) to detect the wake word "komputer". The purpose of this wake word detection system is to identify instances of the word "komputer" in an audio stream, which can be used to trigger actions or commands in voice-activated systems.
 
